@@ -1,4 +1,4 @@
-function montyHallSimulation(switchDoors, numTrials = 1000) {
+function montyHallSimulation(switchDoors, numTrials = 5) {
     let winCount = 0;
 
     for (let i = 0; i < numTrials; i++) {

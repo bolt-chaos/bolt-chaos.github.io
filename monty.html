@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The Monty Hall Problem</h2>
+
+<p>The Monty Hall problem is a probability puzzle based on a game show scenario. The contestant is presented with three doors. Behind one door is a car, and behind the other two doors are goats. The contestant chooses a door, then the host, who knows what's behind each door, opens one of the other two doors to reveal a goat. The contestant is then given the option to switch their choice to the remaining unopened door. The question is: should the contestant switch?</p>
+
+<button onclick="runSimulation()">Run Simulation</button>
+
+<table id="results">
+  <tr>
+    <th>Strategy</th>
+    <th>Win Rate</th>
+  </tr>
+</table>
+
+<script src="monty.js"></script>
+<script>
+function runSimulation() {
+    const winRateSwitch = montyHallSimulation(true);
+    const winRateStay = montyHallSimulation(false);
+
+    const resultsTable = document.getElementById('results');
+
+    const rowSwitch = resultsTable.insertRow(-1);
+    const cellSwitchStrategy = rowSwitch.insertCell(0);
+    const cellSwitchWinRate = rowSwitch.insertCell(1);
+    cellSwitchStrategy.innerHTML = "Switch";
+    cellSwitchWinRate.innerHTML = winRateSwitch;
+
+    const rowStay = resultsTable.insertRow(-1);
+    const cellStayStrategy = rowStay.insertCell(0);
+    const cellStayWinRate = rowStay.insertCell(1);
+    cellStayStrategy.innerHTML = "Stay";
+    cellStayWinRate.innerHTML = winRateStay;
+}
+</script>
+
+</body>
+</html>

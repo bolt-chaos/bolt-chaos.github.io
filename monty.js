@@ -1,4 +1,4 @@
-function montyHallSimulation(switchDoors, numTrials = 5) {
+function montyHallSimulation(switchDoors, numTrials = 1000) {
     let winCount = 0;
     console.log("Running simulation with switchDoors = " + switchDoors + " and numTrials = " + numTrials)
 
